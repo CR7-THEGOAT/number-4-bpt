@@ -1,0 +1,341 @@
+/*
+ * Modern Elegant Styles for Digital Products Multi-Page Site (Version 2)
+ *
+ * This stylesheet defines a dark, modern theme with rich accent colours.
+ * Each category is colour coded and the layout is responsive, with generous
+ * spacing, rounded cards, and subtle shadows. A Google font is used for
+ * a premium feel, and the navigation bar employs a translucent backdrop.
+ */
+
+/* Import Google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Root variables for colour palette */
+:root {
+  --bg: #0d1017;            /* Dark page background */
+  --surface: #1b2330;        /* Surface colour for nav and footers */
+  --card: #1f2937;           /* Card backgrounds */
+  --text: #e5e7eb;           /* Primary text colour */
+  --muted: #9ca3af;          /* Secondary text colour */
+  --primary: #00bcd4;        /* Generic accent (aqua) */
+  --gold: #d4af37;           /* Category accent for Educational */
+  --purple: #6c5ce7;         /* Category accent for Art */
+  --blue: #0a84ff;           /* Category accent for Productivity */
+  --green: #4caf50;          /* Category accent for Media */
+  --silver: #b0c4de;         /* Category accent for Coding */
+  --red: #c44536;            /* Category accent for Miscellaneous */
+}
+
+/* Reset basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(27, 35, 48, 0.75);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  z-index: 1000;
+}
+
+nav .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: var(--primary);
+  color: var(--bg);
+}
+
+/* Shared container for page content */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--surface) 80%);
+  padding: 4rem 1.5rem;
+  text-align: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--bg);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--bg);
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg);
+  color: var(--primary);
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.hero .btn:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* Section headings */
+h2.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-left: 6px solid var(--primary);
+  padding-left: 0.75rem;
+}
+
+/* Category sections styling */
+.category-section {
+  margin-bottom: 2.5rem;
+}
+
+.category-section .category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.category-section .category-header h3 {
+  flex-grow: 1;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.category-section .category-header .accent {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.item-card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.35);
+}
+
+.item-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.item-card p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+
+.item-card .price {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Order form */
+.order-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.order-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.order-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.order-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.order-form button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--bg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.order-form button:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* Colour meaning page */
+.colour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.colour-card {
+  background: var(--card);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.colour-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.35);
+}
+
+.colour-card .swatch {
+  height: 80px;
+  width: 100%;
+}
+
+.colour-card .colour-content {
+  padding: 1rem;
+}
+
+.colour-card .colour-content h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.colour-card .colour-content p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* About page */
+.about-section {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  margin-bottom: 2rem;
+}
+
+.about-section h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+.about-section p {
+  color: var(--muted);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  background: var(--surface);
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  nav ul {
+    gap: 0.5rem;
+  }
+}
